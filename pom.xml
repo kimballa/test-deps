@@ -14,5 +14,7 @@
     <module>dependency-a</module> <!-- Third-party implementation "A" -->
     <module>dependency-b</module> <!-- Third-party implementation "B" -->
 
+    <module>delegation</module> <!-- delegation library -->
+
   </modules>
 </project>
