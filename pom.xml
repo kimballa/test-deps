@@ -15,6 +15,7 @@
     <module>dependency-b</module> <!-- Third-party implementation "B" -->
 
     <module>delegation</module> <!-- delegation library -->
+    <module>bridge-api</module> <!-- Bridge API that facilitates dependency use --> 
 
   </modules>
 </project>
