@@ -16,6 +16,8 @@
 
     <module>delegation</module> <!-- delegation library -->
     <module>bridge-api</module> <!-- Bridge API that facilitates dependency use --> 
+    <module>bridge-a</module>   <!-- Bridge implementation for "A" -->
+    <module>bridge-b</module>   <!-- Bridge implementation for "B" -->
 
   </modules>
 </project>
