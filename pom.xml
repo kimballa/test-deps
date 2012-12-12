@@ -19,5 +19,8 @@
     <module>bridge-a</module>   <!-- Bridge implementation for "A" -->
     <module>bridge-b</module>   <!-- Bridge implementation for "B" -->
 
+    <module>main-api</module>   <!-- Main library that works with A or B via a bridge -->
+
+    <module>client</module>     <!-- Client program that depends on main-api + A or B -->
   </modules>
 </project>

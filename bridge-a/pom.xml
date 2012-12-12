@@ -29,6 +29,7 @@
       <groupId>org.kiji.depdemo</groupId>
       <artifactId>dependency-a</artifactId>
       <version>${project.version}</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 </project>

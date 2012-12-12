@@ -42,10 +42,17 @@ public final class PriorityLoader {
     int bestPriority = 0;
     T bestService = null;
 
+    System.err.println(">> Loading provider for class " + service.getName());
+    System.err.println(">> hint: " + runtimeHint);
+
     for (T serviceImpl : loader) {
+      System.err.println("Got service implementation: " + serviceImpl.getClass().getName());
       int thisPriority = serviceImpl.getPriority(runtimeHint);
+      System.err.println(">> got priority: " + thisPriority);
       if (thisPriority > bestPriority) {
+        System.err.println("Choosing this as the best service");
         bestService = serviceImpl;
+        bestPriority = thisPriority;
       }
     }
 

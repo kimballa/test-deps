@@ -1,12 +1,12 @@
 
-package bridgea;
+package bridgeb;
 
 import bridge.DependencyBridge;
 import common.Message;
-import depa.MessageMaker;
+import depb.MessageMaker;
 
-/** Bridge to the "A" implementation. **/
-public class BridgeImplA extends DependencyBridge {
+/** Bridge to the "B" implementation. **/
+public class BridgeImplB extends DependencyBridge {
   /** {@inheritDoc} */
   @Override
   public Message getMessage() {
