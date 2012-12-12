@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.kiji.depdemo</groupId>
+  <artifactId>client</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <!-- Build this with -Ddep=a or -Ddep=b to select which to compile/run against. -->
+  <name>Main Client API</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.6</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+  </properties>
+
+  <build>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.kiji.depdemo</groupId>
+      <artifactId>main-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>depA</id>
+      <activation>
+        <property>
+          <name>!dep</name>
+        </property>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>org.kiji.depdemo</groupId>
+          <artifactId>dependency-a</artifactId>
+          <version>${project.version}</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>configured</id>
+      <activation>
+        <property>
+          <name>dep</name>
+        </property>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>org.kiji.depdemo</groupId>
+          <artifactId>dependency-${dep}</artifactId>
+          <version>${project.version}</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+</project>
